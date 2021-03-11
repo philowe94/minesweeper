@@ -45,14 +45,11 @@ class Board
         @grid.each do |row|
             print "\n"
             row.each do |tile|
-                if tile.is_revealed #once time is built out
-
-                else
-                    print '_ ' 
-                end
+                print tile.print_value
             end
         end
     end
 
 
 end
+
