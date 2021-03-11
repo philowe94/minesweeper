@@ -30,12 +30,12 @@ class Board
         num_bombs.times do
             row = (0..8).to_a.sample
             col = (0..8).to_a.sample
-            @grid[row][col] = Tile.new(true,self)
+            @grid[row][col] = Tile.new(true,self, [row,col])
         end
         9.times do |idx1|
             9.times do |idx2|
                 if @grid[idx1][idx2] == nil
-                    @grid[idx1][idx2] = Tile.new(false, self)
+                    @grid[idx1][idx2] = Tile.new(false, self, [idx1, idx2])
                 end
             end
         end
@@ -50,6 +50,15 @@ class Board
         end
     end
 
+    def cheat_render
+        @grid.each do |row|
+            print "\n"
+            row.each do |tile|
+                tile.cheat_reveal
+                print tile.print_value
+            end
+        end
+    end
 
 end
 
