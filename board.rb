@@ -42,13 +42,17 @@ class Board
     end
 
     def render
-        grid.length.times do |row|
-            if tile.is_revealed? #once time is built out
+        @grid.each do |row|
+            print "\n"
+            row.each do |tile|
+                if tile.is_revealed #once time is built out
 
-
-
+                else
+                    print '_ ' 
+                end
+            end
         end
-
     end
+
 
 end

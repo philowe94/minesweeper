@@ -2,6 +2,8 @@
 
 class Tile
 
+    attr_reader :is_revealed
+    
     def initialize(is_bomb, board)
         @is_bomb = is_bomb
         @is_revealed = false
